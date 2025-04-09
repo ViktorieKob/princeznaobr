@@ -1,4 +1,5 @@
 <!-- menu.html -->
+ <!--
 <header>
     <nav>
       <a href="index.html">Šifrovač</a>
@@ -11,4 +12,36 @@
 
     </nav>
   </header>
-  
+  -->
+
+<!-- menu.html -->
+<!-- menu.html -->
+<!-- menu.html -->
+<nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="desktop-nav">
+    <a href="index.html">Šifrovač</a>
+    <a href="legenda.html">Legenda</a>
+    <a href="tvary.html">Tvary</a>
+    <a href="zvirata.html">Zvířátka</a>
+    <a href="karticky.html">Kartičky</a>
+    <a href="ostatni.html">Obrázky</a>
+    <a href="basnicka.html">Básnička</a>
+  </div>
+  <div class="mobile-nav" id="mobileMenu">
+    <a href="index.html">Šifrovač</a>
+    <a href="legenda.html">Legenda</a>
+    <a href="tvary.html">Tvary</a>
+    <a href="zvirata.html">Zvířátka</a>
+    <a href="karticky.html">Kartičky</a>
+    <a href="ostatni.html">Obrázky</a>
+    <a href="basnicka.html">Básnička</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+</script>
