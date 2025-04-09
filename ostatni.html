@@ -10,13 +10,7 @@
         <div id="menu-container"></div>
       </header>
       
-      <script>
-        fetch("menu.html")
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById("menu-container").innerHTML = data;
-          });
-      </script>
+
 
 <h1 id="main-title">Obrázky</h1>
 
@@ -29,12 +23,22 @@
   </div>
 
   <script>
-    function toggleMobileMenu() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('show');
-    }
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-container").innerHTML = data;
+
+        // Po načtení menu aktivujeme klikání na hamburger
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        if (toggleBtn && mobileMenu) {
+          toggleBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("show");
+          });
+        }
+      });
   </script>
-  
   
 </body>
 </html>  
