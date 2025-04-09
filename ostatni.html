@@ -27,16 +27,6 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById("menu-container").innerHTML = data;
-
-        // Po načtení menu aktivujeme klikání na hamburger
-        const toggleBtn = document.querySelector(".menu-toggle");
-        const mobileMenu = document.getElementById("mobileMenu");
-
-        if (toggleBtn && mobileMenu) {
-          toggleBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("show");
-          });
-        }
       });
   </script>
   
