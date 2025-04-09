@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tvary</title>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+<body>
+    <header>
+        <div id="menu-container"></div>
+      </header>
+      
+      <script>
+        fetch("menu.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("menu-container").innerHTML = data;
+          });
+      </script>
+
+<h1 id="main-title">Obrázky</h1>
+
+  <div class="gallery">
+    <img src="https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/lektvar.jpeg" alt="Lektvar obrázek">
+    <img src="https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/spojeni.jpg" alt="Spojení srdce">
+    <img src="https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/ohen.jpg" alt="Oheň">
+
+
+  </div>
+</body>
+</html>  

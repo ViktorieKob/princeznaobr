@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Legenda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div id="menu-placeholder"></div>
+  </header>
+
+  <h1 id="main-title">Legenda symbolů</h1>
+
+  <div class="legenda-container">
+    <div class="legenda-column" id="legendColumn1"></div>
+    <div class="legenda-column" id="legendColumn2"></div>
+    <div class="legenda-column" id="legendColumn3"></div>
+    <div class="legenda-column" id="legendColumn4"></div>
+  </div>
+
+  <script>
+    // Načtení menu
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-placeholder').innerHTML = data;
+      });
+
+    // Generování legendy
+    const baseURL = "https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/";
+    const symbolMap = {
+      A: baseURL + "A.JPEG",
+      B: baseURL + "B.JPEG",
+      C: baseURL + "C.JPEG",
+      D: baseURL + "D.JPEG",
+      E: baseURL + "E.JPEG",
+      F: baseURL + "F.JPEG",
+      G: baseURL + "G.JPEG",
+      H: baseURL + "H.JPEG",
+      I: baseURL + "I.JPEG",
+      J: baseURL + "J.JPEG",
+      K: baseURL + "K.JPEG",
+      L: baseURL + "L.png",
+      M: baseURL + "M.JPEG",
+      N: baseURL + "N.JPEG",
+      O: baseURL + "O.jpg",
+      P: baseURL + "P.JPEG",
+      R: baseURL + "R.JPEG",
+      S: baseURL + "S.JPEG",
+      T: baseURL + "T.JPEG",
+      U: baseURL + "U.JPEG",
+      V: baseURL + "V.JPEG",
+      W: baseURL + "W.JPEG",
+      Y: baseURL + "Y.JPEG",
+      Z: baseURL + "Z.JPEG",
+      CH: baseURL + "Ch.JPEG"
+    };
+
+    window.onload = function () {
+      const keys = Object.keys(symbolMap);
+      const columns = [
+        document.getElementById("legendColumn1"),
+        document.getElementById("legendColumn2"),
+        document.getElementById("legendColumn3"),
+        document.getElementById("legendColumn4")
+      ];
+
+      keys.forEach((key, index) => {
+        const item = document.createElement("div");
+        item.className = "legenda-item";
+
+        const label = document.createElement("span");
+        label.textContent = key;
+
+        const img = document.createElement("img");
+        img.src = symbolMap[key];
+        img.alt = key;
+
+        item.appendChild(label);
+        item.appendChild(img);
+
+        const colIndex = index % 4;
+        columns[colIndex].appendChild(item);
+      });
+    };
+  </script>
+</body>
+</html>

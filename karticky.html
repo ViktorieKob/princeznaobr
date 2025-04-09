@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartičky</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div id="menu-container"></div>
+    <script>
+      fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("menu-container").innerHTML = data;
+        });
+    </script>
+  </header>
+
+  <h1 id="main-title">Kartičky se symboly</h1>
+
+  <button class="cards-print-button" onclick="window.print()">Tisk</button>
+
+  <div class="cards-grid-container">
+    <div class="cards-card cards-purple">
+      <h2>STÁZI</h2>
+      <div class="cards-columns">
+        <div class="cards-column">
+          <p>A -</p><p>B -</p><p>C -</p><p>D -</p><p>E -</p><p>F -</p><p>G -</p><p>H -</p><p>I -</p><p>J -</p><p>K -</p><p>L -</p><p>M -</p>
+        </div>
+        <div class="cards-column">
+          <p>N -</p><p>O -</p><p>P -</p><p>R -</p><p>S -</p><p>T -</p><p>U -</p><p>V -</p><p>W -</p><p>Y -</p><p>Z -</p><p>CH -</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-card cards-red">
+      <h2>LINDA</h2>
+      <div class="cards-columns">
+        <div class="cards-column">
+          <p>A -</p><p>B -</p><p>C -</p><p>D -</p><p>E -</p><p>F -</p><p>G -</p><p>H -</p><p>I -</p><p>J -</p><p>K -</p><p>L -</p><p>M -</p>
+        </div>
+        <div class="cards-column">
+          <p>N -</p><p>O -</p><p>P -</p><p>R -</p><p>S -</p><p>T -</p><p>U -</p><p>V -</p><p>W -</p><p>Y -</p><p>Z -</p><p>CH -</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-card cards-yellow">
+      <h2>SYLVA</h2>
+      <div class="cards-columns">
+        <div class="cards-column">
+          <p>A -</p><p>B -</p><p>C -</p><p>D -</p><p>E -</p><p>F -</p><p>G -</p><p>H -</p><p>I -</p><p>J -</p><p>K -</p><p>L -</p><p>M -</p>
+        </div>
+        <div class="cards-column">
+          <p>N -</p><p>O -</p><p>P -</p><p>R -</p><p>S -</p><p>T -</p><p>U -</p><p>V -</p><p>W -</p><p>Y -</p><p>Z -</p><p>CH -</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-card cards-orange">
+      <h2>MARUŠKA</h2>
+      <div class="cards-columns">
+        <div class="cards-column">
+          <p>A -</p><p>B -</p><p>C -</p><p>D -</p><p>E -</p><p>F -</p><p>G -</p><p>H -</p><p>I -</p><p>J -</p><p>K -</p><p>L -</p><p>M -</p>
+        </div>
+        <div class="cards-column">
+          <p>N -</p><p>O -</p><p>P -</p><p>R -</p><p>S -</p><p>T -</p><p>U -</p><p>V -</p><p>W -</p><p>Y -</p><p>Z -</p><p>CH -</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

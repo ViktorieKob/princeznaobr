@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zvířátka</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <h1 id="main-title">Zvířátka</h1>
+  <button class="shape-print-button" onclick="window.print()">Tisk</button>
+
+  <div class="shape-page"><img src="kruh.png" alt="Kruh"></div>
+  <div class="shape-page"><img src="ctverec.png" alt="Čtverec"></div>
+  <div class="shape-page"><img src="obdelnik.png" alt="Obdélník"></div>
+  <div class="shape-page"><img src="srdce.png" alt="Srdce"></div>
+  <div class="shape-page"><img src="hvezda.png" alt="Hvězda"></div>
+
+  <script>
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-container").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
+

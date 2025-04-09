@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Básnička</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="menu-placeholder"></div>
+
+    <div class="top-buttons">
+      <button onclick="window.print()">Tisk</button>
+    </div>
+
+    <h1 id="main-title">Básnička pro Dévínku</h1>
+
+    <div class="poem-wrapper">
+      <div class="poem">
+        „Čtyři srdce spojíme,<br />
+        kouzlem tebe změníme.<br />
+        Křídla dáme, sílu též,<br />
+        Dévínko, teď leť a běž!“<br /><br />
+      </div>
+    </div>
+
+    <script>
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("menu-placeholder").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

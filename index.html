@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Šifrovací dopisový generátor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="menu-container"></div>
+      </header>
+      
+      <script>
+        fetch("menu.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("menu-container").innerHTML = data;
+          });
+      </script>
+      
+
+  <h1 id="main-title">Šifrovací dopisový generátor</h1>
+
+  <input type="text" id="customHeading" placeholder="Zadej svůj vlastní nadpis"><br>
+  <textarea id="inputText" placeholder="Napiš sem svůj tajný text..." rows="5"></textarea><br>
+  <button onclick="encryptText()">Šifrovat</button>
+  <button onclick="clearOutput()">Vymazat</button>
+  <button onclick="window.print()">Tisk</button>
+
+  <div id="output"></div>
+
+  <script>
+    const baseURL = "https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/";
+
+    const symbolMap = {
+      A: baseURL + "A.JPEG",
+      B: baseURL + "B.JPEG",
+      C: baseURL + "C.JPEG",
+      D: baseURL + "D.JPEG",
+      E: baseURL + "E.JPEG",
+      F: baseURL + "F.JPEG",
+      G: baseURL + "G.JPEG",
+      H: baseURL + "H.JPEG",
+      I: baseURL + "I.JPEG",
+      J: baseURL + "J.JPEG",
+      K: baseURL + "K.JPEG",
+      L: baseURL + "L.png",
+      M: baseURL + "M.JPEG",
+      N: baseURL + "N.JPEG",
+      O: baseURL + "O.jpg",
+      P: baseURL + "P.JPEG",
+      R: baseURL + "R.JPEG",
+      S: baseURL + "S.JPEG",
+      T: baseURL + "T.JPEG",
+      U: baseURL + "U.JPEG",
+      V: baseURL + "V.JPEG",
+      W: baseURL + "W.JPEG",
+      Y: baseURL + "Y.JPEG",
+      Z: baseURL + "Z.JPEG",
+      CH: baseURL + "Ch.JPEG"
+    };
+
+    function encryptText() {
+      const input = document.getElementById("inputText").value.toUpperCase();
+      const heading = document.getElementById("customHeading").value;
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = "";
+
+      if (heading.trim() !== "") {
+        const headingEl = document.createElement("div");
+        headingEl.className = "custom-heading";
+        headingEl.textContent = heading;
+        outputDiv.appendChild(headingEl);
+      }
+
+      const paragraphs = input.split(/\n+/);
+      paragraphs.forEach(para => {
+        const words = para.trim().split(" ");
+        const lineDiv = document.createElement("div");
+        lineDiv.className = "symbol-line";
+
+        words.forEach(word => {
+          const span = document.createElement("span");
+          span.style.whiteSpace = "nowrap";
+          span.style.marginRight = "30px";
+
+          let i = 0;
+          while (i < word.length) {
+            let ch = word[i];
+            if (ch === "C" && word[i + 1] === "H") {
+              ch = "CH";
+              i++;
+            }
+            if (/[ÁČĆĎĚŇŘŠŤŮÝŽ]/.test(ch)) {
+              ch = ch.normalize("NFD").replace(/\p{Diacritic}/gu, "").charAt(0);
+            }
+            if (symbolMap[ch]) {
+              const img = document.createElement("img");
+              img.src = symbolMap[ch];
+              img.alt = ch;
+              img.className = "symbol";
+              img.setAttribute("data-char", ch);
+              span.appendChild(img);
+            } else {
+              const plain = document.createElement("span");
+              plain.className = "plain-char";
+              plain.textContent = ch;
+              span.appendChild(plain);
+            }
+            i++;
+          }
+
+          const underscore = document.createElement("span");
+          underscore.className = "plain-char";
+          underscore.textContent = "_";
+          span.appendChild(underscore);
+
+          lineDiv.appendChild(span);
+        });
+
+        outputDiv.appendChild(lineDiv);
+      });
+    }
+
+    function clearOutput() {
+      document.getElementById("output").innerHTML = "";
+      document.getElementById("inputText").value = "";
+      document.getElementById("customHeading").value = "";
+    }
+  </script>
+</body>
+</html>
