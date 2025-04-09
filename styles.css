@@ -193,11 +193,21 @@
     margin: 18px 0;
     border-bottom: 1px dashed #ccc;
   }
+
+  
   
   .cards-purple { border-color: mediumorchid; }
   .cards-red { border-color: crimson; }
   .cards-yellow { border-color: gold; }
   .cards-orange { border-color: darkorange; }
+  .doplnovacka-card.cards-all {
+    border: 30px solid;
+    border-top-color: mediumorchid;
+    border-right-color: crimson;
+    border-bottom-color: darkorange;
+    border-left-color: rgb(243, 79, 188);
+  }
+  
   
   @media print {
     .cards-print-button,
