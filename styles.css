@@ -437,22 +437,52 @@ nav a:hover {
 /* ======================
    Styly pro doplnovacka.html
    ====================== */
+   /*
    .doplnovacka-grid-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding: 30px;
   }
-  
+  */
+  .doplnovacka-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  /*
   .doplnovacka-card {
-    border: 10px solid;
-    padding: 40px;
-    width: 100%;
-    max-width: 1000px;
+    border: 20px solid;
+    padding: 10px;
+    width: 80%;
+    height: 100vh; 
     margin: 0 auto;
     box-sizing: border-box;
   }
-  
+  */
+  .doplnovacka-card {
+    page-break-inside: avoid;
+    height: 50vh;
+    width: 65%;
+    padding: 20px;
+    margin: 0 auto;
+    display:auto ;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 10px solid;
+  }
+
+/*
+  .doplnovacka-card {
+    page-break-inside: avoid;
+    height: 93vh;
+    display: flex;
+    align-items: center;
+  }
+    */
   .cards-purple {
     border-color: #c452f0;
   }
@@ -468,39 +498,38 @@ nav a:hover {
   .cards-orange {
     border-color: #f28b2a;
   }
-  
+
   .doplnovacka-grid {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    height: 90vh; /* výška celé karty */
+    height: 100%;
   }
-  
+
+  /*
   .doplnovacka-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
   }
-  
+ 
   .doplnovacka-img {
     max-height: 80px;
-    height: auto;
-    width: auto;
+    margin-bottom: 20px;
   }
   
   .doplnovacka-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
+    justify-content: space-evenly;
+    flex-grow: 1;
     font-size: 2.4vh;
     list-style-position: inside;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
-  
+  */ 
   .doplnovacka-print-button {
     margin-bottom: 20px;
     background-color: #972788;
@@ -521,21 +550,16 @@ nav a:hover {
   @media print {
     .doplnovacka-card {
       page-break-after: always;
+      height: 80vh;
     }
   
-    .doplnovacka-print-button, header, #menu-container, h1 {
+    .doplnovacka-print-button,
+    header,
+    #menu-container,
+    h1 {
       display: none;
     }
-  
-    .doplnovacka-card {
-      border-width: 15px;
-      padding: 30px;
-    }
-  
-    .doplnovacka-grid {
-      height: 100%;
-    }
-  
+  /*
     .doplnovacka-list {
       font-size: 3vh;
     }
@@ -544,4 +568,6 @@ nav a:hover {
       max-height: 100px;
     }
   }
-  
+
+  */
+}
