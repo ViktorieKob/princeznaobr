@@ -115,14 +115,18 @@
     }
   
     body {
-      padding: 20mm;
+      padding: 0mm;
+      margin: 0mm;
     }
   
     #output {
       box-shadow: none;
       padding: 0;
-      width: 100%;
+      width: 95%;
+      line-height: 3cm; 
+
     }
+
   }
   
   /* ======================
