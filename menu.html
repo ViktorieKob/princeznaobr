@@ -18,37 +18,15 @@
 <!-- menu.html -->
 <!-- menu.html -->
 <nav>
-  <!-- Tlačítko pro mobilní menu -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <a href="index.html">Šifrovač</a>
+  <a href="legenda.html">Legenda</a>
+  <a href="tvary.html">Tvary</a>
+  <a href="zvirata.html">Zvířátka</a>
+  <a href="kytky.html">Kytky</a>
+  <a href="karticky.html">Kartičky</a>
+  <a href="ostatni.html">Obrázky</a>
+  <a href="basnicka.html">Básnička</a>
+  <a href="doplnovacka.html">Doplňovačka</a>
 
-  <!-- Menu pro desktop -->
-  <div class="desktop-nav">
-    <a href="index.html">Šifrovač</a>
-    <a href="legenda.html">Legenda</a>
-    <a href="tvary.html">Tvary</a>
-    <a href="zvirata.html">Zvířátka</a>
-    <a href="karticky.html">Kartičky</a>
-    <a href="ostatni.html">Obrázky</a>
-    <a href="basnicka.html">Básnička</a>
-  </div>
-
-  <!-- Menu pro mobil -->
-  <div class="mobile-nav" id="mobileMenu">
-    <a href="index.html">Šifrovač</a>
-    <a href="legenda.html">Legenda</a>
-    <a href="tvary.html">Tvary</a>
-    <a href="zvirata.html">Zvířátka</a>
-    <a href="karticky.html">Kartičky</a>
-    <a href="ostatni.html">Obrázky</a>
-    <a href="basnicka.html">Básnička</a>
-  </div>
 </nav>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    if (menu) {
-      menu.classList.toggle("show");
-    }
-  }
-</script>
