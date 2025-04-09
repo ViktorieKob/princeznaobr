@@ -409,45 +409,7 @@
 }
 /*test menu*/
 
-.menu-toggle {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background-color: transparent;
-  border: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.desktop-nav {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background-color: #ed99f0;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 1000;
-}
-
-.mobile-nav a {
-  color: white;
-  font-size: 20px;
-  padding: 12px 0;
-  text-align: center;
-  border-bottom: 1px solid #fff;
-}
-
+/* Skrytí mobilního menu a zobrazení jen po kliknutí */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -455,9 +417,40 @@
 
   .menu-toggle {
     display: block;
+    background-color: #972788;
+    border: none;
+    color: white;
+    font-size: 28px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #ed99f0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
   }
 
   .mobile-nav.show {
     display: flex;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-size: 20px;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid white;
   }
 }

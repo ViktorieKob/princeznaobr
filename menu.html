@@ -19,6 +19,8 @@
 <!-- menu.html -->
 <nav>
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Desktop menu -->
   <div class="desktop-nav">
     <a href="index.html">Šifrovač</a>
     <a href="legenda.html">Legenda</a>
@@ -28,6 +30,8 @@
     <a href="ostatni.html">Obrázky</a>
     <a href="basnicka.html">Básnička</a>
   </div>
+
+  <!-- Mobilní menu -->
   <div class="mobile-nav" id="mobileMenu">
     <a href="index.html">Šifrovač</a>
     <a href="legenda.html">Legenda</a>
@@ -39,9 +43,3 @@
   </div>
 </nav>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-  }
-</script>

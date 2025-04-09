@@ -7,7 +7,7 @@
 </head>
 <body>
   <header>
-    <div id="menu-placeholder"></div>
+    <div id="menu-container"></div>
   </header>
 
   <h1 id="main-title">Legenda symbolů</h1>
@@ -19,13 +19,14 @@
     <div class="legenda-column" id="legendColumn4"></div>
   </div>
 
-  <script>
+
     // Načtení menu
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-placeholder').innerHTML = data;
-      });
+    <script>
+  fetch("menu.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("menu-container").innerHTML = data;
+    });
 
     // Generování legendy
     const baseURL = "https://raw.githubusercontent.com/ViktorieKob/sifra-generator/main/";
@@ -86,6 +87,12 @@
     };
   </script>
 
+<script>
+  function toggleMobileMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('show');
+  }
+</script>
 
 
 
