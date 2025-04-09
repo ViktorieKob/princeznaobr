@@ -260,7 +260,7 @@
   }
   
   .poem {
-    font-size: 18px;
+    font-size: 35px;
     font-family: 'Georgia', serif;
     line-height: 1.35;
     white-space: pre-wrap;
@@ -492,7 +492,7 @@ nav a:hover {
   }
   
   .cards-red {
-    border-color: #ec2d3f;
+    border-color: #ec2db3;
   }
   
   .cards-yellow {
@@ -500,7 +500,7 @@ nav a:hover {
   }
   
   .cards-orange {
-    border-color: #f28b2a;
+    border-color: #ec2d3f;
   }
 
   .doplnovacka-grid {
