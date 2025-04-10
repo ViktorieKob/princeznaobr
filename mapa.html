@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div id="menu-container"></div>
+  </header>
+
+  <h1 id="main-title">Mapy</h1>
+  <div class="center-button">
+    <button class="mapa-print-button" onclick="window.print()">Tisk</button>
+</div>
+
+  <div class="mapa-stranka"><img src="fialova.jpg" alt="Fialová"></div>
+  <div class="mapa-stranka"><img src="oranzova.jpg" alt="Oranžová"></div>
+  <div class="mapa-stranka"><img src="cervena.jpg" alt="Červená"></div>
+
+  <script>
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-container").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

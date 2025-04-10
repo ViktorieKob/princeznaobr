@@ -585,3 +585,85 @@ nav a:hover {
 
   */
 }
+/* MAPY - pro tisk na šířku A4, jedna mapa na stránku */
+/* ======================
+   Styly pro mapy.html
+   ====================== */
+/* ======================
+   Styly pro mapy.html
+   /* ======================
+   Styly pro mapy.html
+   ====================== */
+.mapa-stranka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.mapa-stranka img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.mapa-print-button {
+  display: block;
+  margin: 0 auto 20px auto;
+  background-color: #c452b1;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mapa-print-button:hover {
+  background-color: #972788;
+}
+
+@media print {
+  header,
+  #main-title,
+  .mapa-print-button {
+    display: none;
+  }
+
+  /*body {
+    margin: 0;
+    padding: 0;
+  }*/
+  @media print {
+    .mapa-stranka {
+      page-break-after: always;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .mapa-stranka img {
+      display: block;
+      margin: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  
+
+  .mapa-stranka:last-of-type {
+    page-break-after: auto;
+  }
+}
